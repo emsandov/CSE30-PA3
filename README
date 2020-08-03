@@ -1,0 +1,92 @@
+/*
+ * Filename: README
+ * Author: Emi Sandoval
+ * Userid: cs30s120br
+ * Date: 08/02/2020
+ * Sources of help: None
+ */
+
+Description
+-----------
+	This simple program takes a hexadecimal number as a  string as input
+ and extracts the parts of the single precision iee-754 floating point
+ hexadecimal number.
+
+How to compile
+--------------
+	To compile this program, simply navigate to the directory containing
+the source files for PA0 (which should include the Makefile) and type 'make'.
+
+How to run
+----------
+	To run the program, type './' (without quotation marks) followed by
+the executable name and a space followed by an argument. For example:
+
+	./fpdec 0x12345677
+
+Normal Output
+-------------
+	Normal output is printed to stdout. An example of normal output would
+be the following:
+
+cs30s120br@pi-cluster-001:~/pa3$ ./fpdec 0xc47a0000
+Sign Bit: 1
+Unbiased Exponent: 9
+Mantissa: fa0000
+
+Abnormal output
+---------------
+	Abnormal output is printed to stderr. This can occur if there are too
+many arguments passed into the program:
+
+cs30s120br@pi-cluster-001:~/pa3$ ./fpdec 0 1
+Incorrect number of arguments.
+
+Usage ./fpdec {hexString}
+
+This can also occur if there are too few arguments:
+
+cs30s120br@pi-cluster-001:~/pa3$ ./fpdec
+Incorrect number of arguments.
+
+Usage ./fpdec {hexString}
+
+Testing
+-------
+
+This program was tested using the sample pa3testfpdec executable that was
+provided. Both programs were run with the same input and their outputs were 
+redirected to two different files ( this program to myOut and pa3testfpdec to
+refOut. These output were then compared using the command line tool 'diff'.
+When there were no differences in output, it indicated that my program was
+functioning properly.
+
+In particular, these inputs were tested on the executable:
+	- 0x12345677
+	- 0x41260000
+	- 0x40000000
+	- 0xbf800000
+	- 0xc47a0000
+Furthermore, the parseNum() along with the extractParts() function was unit
+tested to ensure that it returns the proper value. Test inputs included 
+different values of hexadecimals.
+
+Questions
+---------
+
+1) Your friend is stressed and asks you for your CSE 30 PA code. How do you
+convince them to act with integrity?
+
+I tell my friend that it is wrong to get code from others and that it is 
+an academic integrity violation. I let them know that not only would they
+put themselves at risk, but they would also put me at risk if I were to 
+share my code with them. I would also tell them that they should attempt
+the PA on their own so that they can actually learn and become better
+programmers.
+
+2) We strongly encourage everyone in the class to voice your opinion on the
+class and the instruction team on CAPE, whether they are positive or negative.
+Please fill out your CAPE response for this class. Once you've done so, put 
+the following as your answer for this question
+
+I have filled out my CAPE response.
